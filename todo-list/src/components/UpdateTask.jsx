@@ -65,7 +65,7 @@ function UpdateTodo({ _id, handleClose, handleEdited }) {
                                 type="text"
                                 name="description"
                                 onChange={handleChange}
-                                placeholder="Enter your task"
+                                placeholder="enter your task"
                             />
                             <ModalFooter pr={0}>
                                 <Button type="submit" onClick={handleSubmit} colorScheme="blue">
