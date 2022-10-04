@@ -69,7 +69,7 @@ function UpdateTodo({ _id, handleClose, handleEdited }) {
                             />
                             <ModalFooter pr={0}>
                                 <Button type="submit" onClick={handleSubmit} colorScheme="blue">
-                                    S4ve
+                                    Save
                                 </Button>
                             </ModalFooter>
                         </FormControl>
