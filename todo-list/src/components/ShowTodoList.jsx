@@ -103,25 +103,6 @@ export function ShowTodoList() {
                         {/* <p onClick={handleClose} className="close">
                             &times;
                         </p> */}
-                        <Modal isCentered initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
-                            <ModalOverlay />
-                            <ModalContent w="90%">
-                                <ModalHeader>Update your task</ModalHeader>
-                                <ModalCloseButton />
-                                <ModalBody pb={6}>
-                                    <FormControl>
-                                        <Input ref={initialRef} placeholder="Enter your task" />
-                                    </FormControl>
-                                </ModalBody>
-
-                                <ModalFooter>
-                                    <Button mr={3} onClick={onClose}>
-                                        Cancel
-                                    </Button>
-                                    <Button colorScheme="blue">Save</Button>
-                                </ModalFooter>
-                            </ModalContent>
-                        </Modal>
                         <UpdateTodo _id={id} handleClose={handleClose} handleUpdate={handleUpdate} />
                     </div>
                 </section>

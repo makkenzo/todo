@@ -46,19 +46,36 @@ function UpdateTodo({ _id, handleClose, handleEdited }) {
 
     return (
         <>
-            <form
-                className="form-container"
-                onSubmit={(e) => {
-                    handleSubmit(e);
-                    handleEdited();
-                    handleClose();
-                }}
-            >
-                <input type="text" name="description" placeholder="Enter your task" onChange={handleChange} />
-                <button type="submit" colorScheme="blue" onClick={handleSubmit}>
-                    Save
-                </button>
-            </form>
+            <Modal isCentered initialFocusRef={initialRef} isOpen={true} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent w="90%">
+                    <ModalHeader>Update your task</ModalHeader>
+                    <ModalCloseButton onClick={handleClose} />
+                    <ModalBody pb={6}>
+                        <FormControl
+                            className="form-container"
+                            onSubmit={(e) => {
+                                handleSubmit(e);
+                                handleEdited();
+                                handleClose();
+                            }}
+                        >
+                            <Input
+                                ref={initialRef}
+                                type="text"
+                                name="description"
+                                onChange={handleChange}
+                                placeholder="Enter your task"
+                            />
+                            <ModalFooter pr={0}>
+                                <Button type="submit" onClick={handleSubmit} colorScheme="blue">
+                                    Save
+                                </Button>
+                            </ModalFooter>
+                        </FormControl>
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
         </>
     );
 }
